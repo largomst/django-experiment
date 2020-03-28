@@ -1,7 +1,30 @@
-<form action="." method="post">
-    {% csrf_token %}
-    <label for="team_name">输入新属性：</label>
-    <input type="text" name="property" value="">
-    <input type="submit" value="提交">
+<table>
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <form action="." method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>
+                    {{ item }}
+                </td>
+                <td>
+                    <input type="hidden" name="property", value={{ item }}>
+                    <input type="submit" , value="delete">
+                </td>
+            </tr>
+        </form>
+        {% endfor %}
+    </tbody>
+</table>
+<form action="." method='POST'>
+    <label for="add">请输入</label>
+    <input type="text" id='add' name='add'>
+    <input type="submit" value="Add">
+    {%csrf_token %}
 </form>
-
