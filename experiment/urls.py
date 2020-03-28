@@ -19,5 +19,6 @@ from form import views
 
 urlpatterns = [
     url(r"^$", views.index, name="index"),
+    url(r"^table/$", views.table, name="table"),
     url(r"^admin/", admin.site.urls),
 ]

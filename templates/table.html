@@ -1,0 +1,24 @@
+{% load tool %}
+
+<table>
+    <thead>
+        <tr>
+            {% for head in heads %}
+            <th>
+                {{ head }}
+            </th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            {% for head in heads %}
+            <td>
+                {{ row|getitem:head }}
+            </td>
+            {% endfor %}    
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
