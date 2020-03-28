@@ -1,1 +1,7 @@
-Hello World!
+<form action="." method="post">
+    {% csrf_token %}
+    <label for="team_name">输入新属性：</label>
+    <input type="text" name="property" value="">
+    <input type="submit" value="提交">
+</form>
+
