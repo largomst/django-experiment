@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+
 from form import views
 
 urlpatterns = [
+    url(r'^record/new$', views.new_record, name='new_record'),
     url(r"^$", views.index, name="index"),
     url(r"^table/$", views.table, name="table"),
     url(r"^admin/", admin.site.urls),

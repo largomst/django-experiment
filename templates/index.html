@@ -8,15 +8,15 @@
         </tr>
     </thead>
     <tbody>
-        {% for item in items %}
+        {% for head in heads %}
         <form action="." method="POST">
             {% csrf_token %}
             <tr>
                 <td>
-                    {{ item }}
+                    {{ head }}
                 </td>
                 <td>
-                    <input type="hidden" name="property", value="{{ item }}">
+                    <input type="hidden" name="property", value="{{ head }}">
                     <input type="submit" , value="delete">
                 </td>
             </tr>

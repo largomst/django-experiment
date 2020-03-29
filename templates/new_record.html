@@ -1,0 +1,12 @@
+<form action="{% url 'new_record' %}" method='POST'>
+    {% csrf_token %}
+    <ul>
+        {% for head in heads %}
+        <li>
+            <label for="{{ head }}_{{ forloop.counter }}">{{ head }}</label>
+            <input type="text" id="{{ head }}_{{ forloop.counter }}" name="{{ head }}_value">
+        </li>
+        {% endfor %}
+    </ul>
+    <input type="submit" value="submit">
+</form>
